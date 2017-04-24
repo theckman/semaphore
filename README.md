@@ -1,6 +1,7 @@
 # semaphore
 [![License](https://img.shields.io/github/license/theckman/semaphore.svg)](https://github.com/theckman/semaphore/blob/master/LICENSE.txt)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](https://godoc.org/github.com/theckman/semaphore)
+[![Latest Git Tag](https://img.shields.io/github/tag/theckman/semaphore.svg)](https://github.com/theckman/semaphore/releases)
 [![Travis master Build Status](https://img.shields.io/travis/theckman/semaphore/master.svg?label=TravisCI)](https://travis-ci.org/theckman/semaphore/branches)
 [![CircleCI master Build Status](https://img.shields.io/circleci/project/github/theckman/semaphore/master.svg?label=CircleCI)](https://circleci.com/gh/theckman/semaphore)
 [![Shippable master Build Status](https://img.shields.io/shippable/58fc497dbaa5e307002c66f5/master.svg?label=Shippable)](https://app.shippable.com/github/theckman/semaphore/status/dashboard)
