@@ -45,18 +45,9 @@ type Releaser interface {
 	Release() error
 }
 
-// Semaphore is the interface needed to implement a functioning semaphore. One
-// function to take permit, one to give back a permit, and a final function to
-// tell the semaphore to stop issuing permits.
-type Semaphore interface {
-	// Acquirer is for taking a semaphore permit. See its comments for more
-	// details.
-	Acquirer
-
-	// Releaser is for releasing a semaphore permit. See its comments for more
-	// details.
-	Releaser
-
+// Closer is the interface for closing an interface to mark it as no longer in
+// use.
+type Closer interface {
 	// Close is a non-blocking function that shuts the semaphore down and
 	// prevents it from issuing further permits. Consumers would need to create
 	// a completely new semaphore, using New(), after calling Close() if they
@@ -69,6 +60,22 @@ type Semaphore interface {
 	// has already been closed, but consumers should treat that as an advisory
 	// and not a fatal error.
 	io.Closer
+}
+
+// Semaphore is the interface needed to implement a functioning semaphore. One
+// function to take permit, one to give back a permit, and a final function to
+// tell the semaphore to stop issuing permits.
+type Semaphore interface {
+	// Acquirer is for taking a semaphore permit. See its comments for more
+	// details.
+	Acquirer
+
+	// Releaser is for releasing a semaphore permit. See its comments for more
+	// details.
+	Releaser
+
+	// Closer is for closing the semaphore. See its comments for more details.
+	Closer
 }
 
 // New returns a new Semaphore and it takes a size argument to define how many
